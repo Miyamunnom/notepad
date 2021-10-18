@@ -1,0 +1,17 @@
+﻿<Window x:Class="notepad.program"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:notepad"
+        mc:Ignorable="d" Height="450" Width="402.176" Title="О программе" ResizeMode="NoResize">
+    <Grid Margin="0,0,3.6,0">
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Блокнот" VerticalAlignment="Top" Height="55" FontSize="45" Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,55,0,0" TextWrapping="Wrap" Text="Версия 0.0.1" VerticalAlignment="Top" Height="28" Width="114" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,100,0,0" TextWrapping="Wrap" Text="Разработчик: Логинова О.С." VerticalAlignment="Top" Height="37" Width="327" FontSize="23" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,137,0,0" TextWrapping="Wrap" Text="email: kekylI@bk.ru" VerticalAlignment="Top" Height="29" Width="170" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="268" Margin="124,186,0,-34" VerticalAlignment="Top" Width="264" Source="lg8WtaM27os.jpg">
+        </Image>
+
+    </Grid>
+</Window>

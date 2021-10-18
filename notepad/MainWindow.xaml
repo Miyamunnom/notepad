@@ -5,15 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:notepad"
         mc:Ignorable="d"
-        Title="Блокнот" Height="450" Width="386.593">
+        Title="Блокнот" Height="450" Width="386.593" Closing="Window_Closing">
     <Grid>
-        <RichTextBox Margin="0,21,-0.4,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+        <RichTextBox Name="richTextBox" Margin="0,21,-0.4,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Initialized="richTextBox_Initialized" KeyDown="richTextBox_KeyDown">
             <FlowDocument/>
         </RichTextBox>
         <Menu Height="21" VerticalAlignment="Top">
-            <MenuItem Header="Файл" Height="21"/>
-            <MenuItem Header="О программе"/>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Новый" InputGestureText="Ctrl+N" Height="20" Margin="0,0,-0.2,0"/>
+                <MenuItem Name="openFile" Header="Открыть" InputGestureText="Ctrl+O" Height="20" Click="openFile_Click" Margin="0,0,0.8,0"/>
+                <MenuItem Name="saveFile" Header="Сохранить" InputGestureText="Ctrl+S" HorizontalAlignment="Left" Height="20" Width="188" Click="saveFile_Click" Margin="0,0,-2,0"/>
+            </MenuItem>
+            <MenuItem Header="Справка" Height="21">
+                <MenuItem x:Name ="program" Header="О программе" Height="20" Click="program_Click" Margin="0,0,15.4,0"/>
+                <MenuItem Header="Помощь" HorizontalAlignment="Left" Height="20" Width="174"/>
+            </MenuItem>
         </Menu>
 
     </Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.Save}" Executed="saveBinding_Executed"  />
+        <CommandBinding Command="{x:Static local:MainWindow.Open}" Executed="openBinding_Executed"  />
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{x:Static local:MainWindow.Save}" Key="S" Modifiers="Ctrl"/>
+        <KeyBinding Command="{x:Static local:MainWindow.Open}" Key="O" Modifiers="Ctrl"/>
+    </Window.InputBindings>
+
 </Window>

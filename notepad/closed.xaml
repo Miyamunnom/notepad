@@ -1,0 +1,14 @@
+﻿<Window x:Class="notepad.closed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:notepad"
+        mc:Ignorable="d"
+        Title="Сохранить" Height="141.428" Width="286.703">
+    <Grid>
+        <Button Content="Да" HorizontalAlignment="Left" Margin="41,46,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="Button_Click"/>
+        <Button Content="Нет" HorizontalAlignment="Left" Margin="160,46,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,13,0,0" TextWrapping="Wrap" Text="Сохранить файл?" VerticalAlignment="Top" FontSize="15"/>
+    </Grid>
+</Window>
