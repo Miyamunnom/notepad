@@ -7,10 +7,15 @@
         mc:Ignorable="d"
         Title="Блокнот" Height="450" Width="386.593" Closing="Window_Closing">
     <Grid>
-        <RichTextBox Name="richTextBox" Margin="0,21,-0.4,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Initialized="richTextBox_Initialized" KeyDown="richTextBox_KeyDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="342*" x:Name="columnDef_1"/>
+            <ColumnDefinition Width="0*" x:Name="columnDef_2"/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox Name="richTextBox" Margin="0,26,10,20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Initialized="richTextBox_Initialized" KeyDown="richTextBox_KeyDown" MouseMove="richTextBox_MouseMove" SelectionChanged="richTextBox_SelectionChanged">
             <FlowDocument/>
         </RichTextBox>
-        <Menu Height="21" VerticalAlignment="Top">
+        <TextBlock x:Name="translatedBox" Margin="10,26,10,20" Initialized="richTextBox_Initialized" KeyDown="richTextBox_KeyDown" Grid.Column="1" Visibility="Collapsed" Grid.ColumnSpan="3"/>
+        <Menu Height="21" VerticalAlignment="Top" Grid.ColumnSpan="4">
             <MenuItem Header="Файл">
                 <MenuItem Header="Новый" InputGestureText="Ctrl+N" Height="20" Margin="0,0,-0.2,0"/>
                 <MenuItem Name="openFile" Header="Открыть" InputGestureText="Ctrl+O" Height="20" Click="openFile_Click" Margin="0,0,0.8,0"/>
@@ -20,8 +25,12 @@
                 <MenuItem x:Name ="program" Header="О программе" Height="20" Click="program_Click" Margin="0,0,15.4,0"/>
                 <MenuItem Header="Помощь" HorizontalAlignment="Left" Height="20" Width="174"/>
             </MenuItem>
+            <MenuItem Header="Вид" Height="21">
+                <MenuItem x:Name ="translator" Header="Переводчик" Height="20" Click="translator_Click" Margin="0,0,15.4,0" ContextMenuOpening="translator_ContextMenuOpening"/>
+                <MenuItem x:Name ="status" Header="Строка состояния" Height="20" Click="status_Click" Margin="0,0,15.4,0"/>
+            </MenuItem>
         </Menu>
-
+        <TextBlock x:Name="status_block" VerticalAlignment="Bottom" Height="20" Margin="0,0,15.4,0"/>
     </Grid>
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.Save}" Executed="saveBinding_Executed"  />
