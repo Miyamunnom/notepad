@@ -1,0 +1,16 @@
+﻿<Window x:Class="notepad.DialogRenameStyle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:notepad"
+        mc:Ignorable="d"
+        Title="DialogRenameStyle" Height="162.209" Width="329.07">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Введите название" />
+            <TextBox x:Name="ResponseTextBox" />
+            <Button Content="OK" Click="OKButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
